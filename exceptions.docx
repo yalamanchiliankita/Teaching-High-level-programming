@@ -1,0 +1,92 @@
+#include<iostream> //
+#include<vector>
+using namespace std;
+
+int main() {
+	vector<int> vec;
+	vec.push_back(0);	
+	vec.push_back(1);	
+	// access the third element, which doesn't exist
+	try
+	{
+		vec.at(2);		
+	}
+	catch (exception& ex)
+	{
+		cout << "Exception occurred!" << endl;
+	}
+	return 0;
+}
+
+
+/*
+    1. Include the iostream header file in the program to use its functions.
+    2. Include the vector header file in the program to use its functions.
+    3. Include the std namespace in the program to its classes without calling it.
+    4. Call the main() function. The program logic should be added within its body.
+    5. Create a vector named vec to store integer data.
+    6. Add the element 0 to the vector named vec.
+    7. Add the element 1 to the vector named vec.
+    8. A comment. It will be skipped by the C++ compiler.
+    9. Use the try statement to catch an exception. The { marks the beginning of the body of try/catch block. The code added within the body will become the protected code.
+    10. Try to access the element stored at index 2 (third element) of the vector named vec. This element doesn’t exist.
+    11. End of the body of try/catch block.
+    12. Catch the exception. The returned error message will be stored in the variable ex.
+    13. Print out some message on the console if the exception is caught.
+    14. End of the body of the catch block.
+    15. The program should return a value upon successful execution.
+    16. End of the main() function body.
+*/
+
+
+
+
+#include <iostream>
+using namespace std;
+double zeroDivision(int x, int y) {
+
+	if (y == 0) {
+		throw "Division by Zero!";
+	}
+	return (x / y);
+}
+
+int main() {
+	int a = 11;
+	int b = 0;
+	double c = 0;
+
+	try {
+		c = zeroDivision(a, b);
+		cout << c << endl;
+	}
+	catch (const char* message) {
+		cerr << message << endl;
+	}
+	return 0;
+}
+
+
+/*
+    1. Include the iostream header file in the program to use its functions.
+    2. Include the std namespace in the program to its classes without calling it.
+    3. Create a function named zeroDivision that takes two integer arguments, x, and y. The function should return a double result.
+    4. Use an if statement to check whether the value of variable argument y is 0. The { marks the beginning of if body.
+    5. The message to be returned/thrown if y is 0.
+    6. End of the body of the if statement.
+    7. The zeroDivision function should return the value of x/y.
+    8. End of the body of the zeroDivision function.
+    9. Call the main() method. The { marks the beginning of this method.
+    10. Declare an integer variable and assigning it the value 11.
+    11. Declare an integer variable b and assigning it the value 0.
+    12. Declare a double variable c and assigning it the value 0.
+    13. Use the try statement to catch an exception. The { marks the beginning of the body of try/catch block. The code added within the body will become the protected code.
+    14. Call the zeroDivision function and passing to arguments a and b, that is, 11 and 0. The result of this operation will be stored in variable c.
+    15. Print out the value of variable c on the console.
+    16. End of the body of try/catch block.
+    17. Catch the exception. The returned error message will be stored in the variable message.
+    18. Print out the returned error message on the console.
+    19. End of the body of the catch block.
+    20. The program should return a value upon successful execution.
+    21. End of the main() function body.
+*/
